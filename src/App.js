@@ -1,10 +1,23 @@
+import React from "react";
 import "./styles.css";
+const { useRef } = React;
 
-export default function App() {
+const App = () => {
+  const buttonRef = useRef();
   return (
-    <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
+    <div className="box">
+      <h1>The Button has a ref</h1>
+      <button
+        onClick={() => {
+          console.log(buttonRef.current);
+        }}
+        ref={buttonRef}
+        className="button"
+      >
+        Special Button
+      </button>
     </div>
   );
-}
+};
+
+export default App;
